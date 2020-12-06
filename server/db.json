@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "name": "Ivan Petrov",
+      "phone": "(948) 468-44-86",
+      "image": "cat",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "name": "Lev Makarov",
+      "phone": "(684) 898-88-32",
+      "image": "tiger",
+      "phrase": "ldsgs eruhtue iotey erth rehgt rt..."
+    },
+    {
+      "name": "Lion Orlov",
+      "phone": "(879) 878-87-65",
+      "image": "wolf",
+      "id": 7
+    },
+    {
+      "id": 8,
+      "name": "Georgy Krayevsky",
+      "phone": "(987) 488-13-69",
+      "image": "enot",
+      "phrase": "jefv sygf iwugfi iwudgfvi iwudbgfi..."
+    },
+    {
+      "id": 9,
+      "name": "Yevgeny Zhemanov",
+      "phone": "(863) 898-68-85",
+      "image": "lion",
+      "phrase": "sruhsdur eritseor sfughla udfh aefuhrb.."
+    }
+  ]
+}

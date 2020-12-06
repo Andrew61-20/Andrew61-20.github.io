@@ -1,0 +1,11 @@
+.user-image {
+   width: 70px;
+   height: 70px 
+}
+.NLink {
+    color: black;
+}
+.NLink-active {
+   color: palevioletred;
+}
+ul { list-style: none; }
