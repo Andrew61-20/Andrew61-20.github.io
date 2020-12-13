@@ -31,8 +31,9 @@ export default class FormChangeModal extends Component {
   handleSubmit = (act) => {
     const {data, update, closeModal } = this.props;
     closeModal();
-    axios.put(`https://my-json-server.typicode.com/Andrew61-20/DB/users/${act.id}`, {
-	  name: act.name,
+    //axios.put(`https://my-json-server.typicode.com/Andrew61-20/DB/users/${act.id}`, {
+     axios.put(`....../${act.id}`, {
+      name: act.name,
       phone: act.phone,
       image: act.image 
     }).then(response => {
