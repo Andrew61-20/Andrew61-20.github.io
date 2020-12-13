@@ -5,11 +5,11 @@ const INITIAL_STATE = {
   name: "",
   phone: "",
   phrase: ""
- }
+}
 
 export default class FormAddModal extends Component {
   
-  state = { ...INITIAL_STATE   };
+  state = {...INITIAL_STATE}
    
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyPress);
@@ -25,14 +25,14 @@ export default class FormAddModal extends Component {
   };
 
   reset = () => {
-    this.setState({ ...INITIAL_STATE });
+    this.setState({...INITIAL_STATE});
   };
 
-  handleSubmit = (newData, e) => {
+  handleSubmit = (item, e) => {
     const { closeModal, load } = this.props;
     closeModal();
     e.preventDefault();
-    API.addUserItem(newData).then(responseNewData => {
+    API.addUserItem(item).then(responseItem => {
       load()
     })
   }
@@ -68,7 +68,7 @@ export default class FormAddModal extends Component {
             name="phoneNumber"
             value={phone}
             onChange={(e) => this.handleChange2(e)}
-            placeholder="Phone Number"
+			placeholder="Phone Number"
           />
           <br />
           <input

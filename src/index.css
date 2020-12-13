@@ -3,9 +3,8 @@
    height: 70px 
 }
 .NLink {
-    color: black;
+   color: black;
 }
 .NLink-active {
    color: palevioletred;
 }
-ul { list-style: none; }

@@ -5,7 +5,7 @@ import FormAddModal from "./FormAddModal";
 export default class RemChanAdd extends Component {
 
 state = {
-    isModalOpen1: false,
+   isModalOpen1: false,
    isModalOpen2: false,
    isSignAdd: false
 }

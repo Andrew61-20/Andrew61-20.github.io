@@ -6,3 +6,14 @@
  from = '/*'
  to = '/index.html'
  status = 200
+
+ [[plugins]]
+  package = "netlify-plugin-fetch-feeds"
+
+  [plugins.inputs]
+    dataDir = "site/_data"
+
+  [[plugins.inputs.feeds]]
+      name = "jsonbin"
+      url = "https://api.jsonbin.io/b/5fccc6f12946d2126ffed647"
+      ttl = 3600

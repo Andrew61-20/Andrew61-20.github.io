@@ -1,67 +1,42 @@
-import React, { Component } from "react";
-import * as API from "../services/api.js";
+import React from "react";
+// import * as API from "../services/api.js";
 import UserList from '../components/UserList.js';
 import ActiveUser from '../components/ActiveUser.js';
 import SearchBar from '../components/SearchBar.js';
 import RemChanAdd from '../components/RemChanAdd.js';
 
-export default class Contacts extends Component {
-
-    state = {
-	    users: [],
-        data: null,
-        term: "",
-        active: 0
-    };
-
-    componentDidMount () {
-        this.loadData()
-    };
- 
-    loadData() {
-        API.getAllUsersItems().then(users => {
-            this.initialData = users;
-            this.setState({
-                data: this.initialData
-            })
-        })
-    };
-
-    updateData(config) {
-        this.setState(config)
-    };
-
-    render() {
+export default ({term, initialData, updateData, data, active, loadData}) => {
+   
         return (
             <div className="app container-fluid">
                 <div className="row">
                     <div className="col-sm-12">
                         <SearchBar
-                            term={this.state.term}
-                            data={this.initialData}
-                            update={this.updateData.bind(this)}
+                            term={term}
+                            initialdata={initialData}
+                            update={updateData}
                         />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-sm-12">
                         <RemChanAdd 
-                            data={this.state.data}
-                            active={this.state.active}
-                            update={this.updateData.bind(this)}
-                            load={this.loadData.bind(this)}
+                            data={data}
+                            active={active}
+                            update={updateData}
+                            load={loadData}
                         />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-sm-4 col-md-3 col-lg-2">
-                        <ActiveUser data={this.state.data} active={this.state.active} />
+                        <ActiveUser data={data} active={active} />
                     </div>
                     <div className="col-sm-8 col-md-9 col-lg-10">
-                        <UserList data={this.state.data} update={this.updateData.bind(this)} />
+                        <UserList data={data} update={updateData} />
                     </div>
                 </div>
             </div>
         )
     }
-}
+
