@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-axios.defaults.baseUrl = 'http://localhost:3001/users';
-const BASE_URL = 'http://localhost:3001/users';
+axios.defaults.baseUrl = 'https://raw.githubusercontent.com/Andrew61-20/PhonesList/master/server/db.json';
+const BASE_URL = 'https://raw.githubusercontent.com/Andrew61-20/PhonesList/master/server/db.json';
 
 
 const getAllUsersItems = () =>
   axios.get (BASE_URL).then(response => {
-    return response.data;
+    return response.data.users;
   });    
   
 const deleteUserItem = id => 
@@ -15,7 +15,7 @@ const deleteUserItem = id =>
 
 const addUserItem = item =>
   axios.post(BASE_URL, item).then(response => {
-      return response.data;
+      return response.data.users;
     });
 	
 export { getAllUsersItems, deleteUserItem, addUserItem };
