@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-//axios.defaults.baseUrl = 'https://my-json-server.typicode.com/Andrew61-20/DB/users';
-const BASE_URL = 'https://my-json-server.typicode.com/Andrew61-20/DB/users';
+axios.defaults.baseUrl = '';
+const BASE_URL = '';
 
 const getAllUsersItems = () =>
   axios.get (BASE_URL).then(response => {
