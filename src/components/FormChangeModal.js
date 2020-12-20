@@ -32,7 +32,7 @@ export default class FormChangeModal extends Component {
     const {data, update, closeModal } = this.props;
     closeModal();
     //axios.put(`https://my-json-server.typicode.com/Andrew61-20/DB/users/${act.id}`, {
-     axios.put(`....../${act.id}`, {
+    axios.put(`https://ot1gbx8vw1.execute-api.us-east-1.amazonaws.com/dev`, {
       name: act.name,
       phone: act.phone,
       image: act.image 

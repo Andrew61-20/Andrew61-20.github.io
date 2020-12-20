@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-phoneslist-dev-133724-authRole",
+      "UnauthRoleArn": "arn:aws:iam::523705539059:role/amplify-phoneslist-dev-133724-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::523705539059:role/amplify-phoneslist-dev-133724-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-phoneslist-dev-133724-deployment",
+      "UnauthRoleName": "amplify-phoneslist-dev-133724-unauthRole",
+      "StackName": "amplify-phoneslist-dev-133724",
+      "StackId": "arn:aws:cloudformation:us-east-1:523705539059:stack/amplify-phoneslist-dev-133724/be333f10-42b7-11eb-bfbe-0e3e179d38e3",
+      "AmplifyAppId": "d4giirufvztei"
+    },
+    "categories": {
+      "auth": {
+        "cognito85230ce8": {}
+      }
+    }
+  }
+}

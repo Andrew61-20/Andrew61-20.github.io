@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-axios.defaults.baseUrl = '';
-const BASE_URL = '';
+axios.defaults.baseUrl = 'https://ot1gbx8vw1.execute-api.us-east-1.amazonaws.com/dev';
+const BASE_URL = 'https://ot1gbx8vw1.execute-api.us-east-1.amazonaws.com/dev';
 
 const getAllUsersItems = () =>
   axios.get (BASE_URL).then(response => {
