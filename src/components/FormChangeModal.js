@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import * as API from "../services/api.js";
 
 const INITIAL_STATE = {
   name: "",
@@ -28,18 +28,23 @@ export default class FormChangeModal extends Component {
     this.setState({ ...INITIAL_STATE });
   };
 
-  handleSubmit = (act) => {
+  handleSubmit = (act, e) => {
     const {data, update, closeModal } = this.props;
     closeModal();
-    //axios.put(`https://my-json-server.typicode.com/Andrew61-20/DB/users/${act.id}`, {
-    axios.put(`https://ot1gbx8vw1.execute-api.us-east-1.amazonaws.com/dev`, {
-      name: act.name,
-      phone: act.phone,
-      image: act.image 
-    }).then(response => {
-        update({data: data, active: 0})
+    e.preventDefault();
+      API.changeUserItem(act.id, act) 
+	      .then(() => {
+          this.setState({
+            name: act.name,
+            phone: act.phone,
+            phrase: act.phrase
+        });
+        update({
+           data: data,
+			     active: 0
+			  })
       })
-  }
+   }
  
   handleChangeName = (e) => {
     const {data, active } = this.props
@@ -54,7 +59,7 @@ export default class FormChangeModal extends Component {
   } 
 
   handleChange2 = (e) => {
-    const { data, active} = this.props
+    const {data, active} = this.props
     this.setState({phone: e.target.value})
     const pattern = /[(]\d{3}[)]\d{3}[-]\d{2}[-]\d{2}/g
     if(e.target.value.match(pattern)) {
@@ -96,7 +101,7 @@ export default class FormChangeModal extends Component {
         <button type="button" onClick={closeModal}>
           Закрыть
         </button>
-        <button type="button" onClick={() => this.handleSubmit(data[active])}>
+        <button type="button" onClick={(e) => this.handleSubmit(data[active], e)}>
           Подтвердить изменение
         </button>
       </div>

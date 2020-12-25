@@ -7,7 +7,6 @@ export default ({dataSearch, term, data, update}) => {
         const filter = data.filter(user => {
            return user.name.toLowerCase().includes(value);
         });
-
         update ({
             data: filter,
             active: 0,

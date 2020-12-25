@@ -1,11 +1,12 @@
 import axios from 'axios';
 
-axios.defaults.baseUrl = 'https://ot1gbx8vw1.execute-api.us-east-1.amazonaws.com/dev';
-const BASE_URL = 'https://ot1gbx8vw1.execute-api.us-east-1.amazonaws.com/dev';
+//axios.defaults.baseUrl = '';
+const BASE_URL = 'http://localhost:3001/users'
+// const BASE_URL = 'https://5fe39dd58bf8af001766e880.mockapi.io/users'
 
 const getAllUsersItems = () =>
   axios.get (BASE_URL).then(response => {
-    return response.data.users;
+    return response.data;
   });    
   
 const deleteUserItem = id => 
@@ -13,9 +14,14 @@ const deleteUserItem = id =>
    
 const addUserItem = item =>
   axios.post(BASE_URL, item).then(response => {
-      return response.data.users;
+      return response.data;
     });
 	
-export { getAllUsersItems, deleteUserItem, addUserItem };
+const changeUserItem = (id, item) =>
+  axios.put(`${BASE_URL}/${id}`, item).then(response => {
+      return response.data;
+    });
+	
+export { getAllUsersItems, deleteUserItem, addUserItem, changeUserItem };
     
 
