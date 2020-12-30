@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-//axios.defaults.baseUrl = '';
 const BASE_URL = 'http://localhost:3001/users'
-// const BASE_URL = 'https://5fe39dd58bf8af001766e880.mockapi.io/users'
 
 const getAllUsersItems = () =>
   axios.get (BASE_URL).then(response => {
